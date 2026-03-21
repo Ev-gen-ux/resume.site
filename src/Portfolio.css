@@ -30,6 +30,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  box-shadow:
+    -12px 0 12px rgba(0, 0, 0, 0.08),
+    12px 0 12px rgba(0, 0, 0, 0.08),
+    0 -12px 12px rgba(0, 0, 0, 0.1),
+    0 12px 12px rgba(0, 0, 0, 0.1);
 }
 
 .resume__sidebar {
