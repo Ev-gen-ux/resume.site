@@ -1,0 +1,472 @@
+/* Design tokens from Figma node 539:3472 */
+.resume {
+  --page-width: 768px;
+  --color-page: #2e2e2e;
+  --color-text: #ffffff;
+  --color-muted: #b2b2b2;
+  --color-track: rgba(178, 178, 178, 0.5);
+  --sidebar-w: 300px;
+  --sidebar-pad-x: 34px;
+  --main-pad-top: 30px;
+  --main-pad-x: 40px;
+  --content-max: 408px;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --lh-tight: 1.4;
+  --gap-section: 32px;
+  --gap-edu: 40px;
+  --gap-block: 20px;
+  --gap-stack: 4px;
+  --rule: rgba(255, 255, 255, 0.12);
+
+  width: var(--page-width);
+  max-width: 100%;
+  min-height: 100vh;
+  background: var(--color-page);
+  color: var(--color-text);
+  font-family: var(--font);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.resume__sidebar {
+  width: 100%;
+  max-width: var(--sidebar-w);
+  flex: 0 0 var(--sidebar-w);
+  min-height: 100%;
+  background: #1c1c1c;
+  box-sizing: border-box;
+  padding: 50px var(--sidebar-pad-x) 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.resume__name {
+  margin: 20px 0 0;
+  align-self: stretch;
+  font-size: 20px;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--color-text);
+}
+
+.resume__role {
+  margin: 12px 0 0;
+  align-self: stretch;
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+  line-height: 1.2;
+  color: var(--color-muted);
+}
+
+.resume__sidebar-title {
+  margin: 0;
+  align-self: stretch;
+  font-size: 14px;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--color-text);
+}
+
+.resume__sidebar-title--contacts {
+  margin-top: 51px;
+}
+
+.resume__sidebar-title--portfolio {
+  margin-top: 40px;
+}
+
+.resume__sidebar-title--hard {
+  margin-top: 40px;
+}
+
+.resume__sidebar-title--tech {
+  margin-top: 40px;
+}
+
+.resume__sidebar-title--interest {
+  margin-top: 60px;
+}
+
+.resume__contact-list {
+  margin: 22px 0 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.resume__contact-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resume__contact-row .resume__ms {
+  flex-shrink: 0;
+}
+
+.resume__contact-row a,
+.resume__contact-row span {
+  font-size: 14px;
+  font-weight: var(--fw-medium);
+  line-height: 18px;
+  color: var(--color-text);
+}
+
+.resume__contact-row a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.resume__hard-list {
+  margin: 16px 0 0;
+  align-self: stretch;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resume__hard-list li {
+  font-size: 14px;
+  font-weight: var(--fw-regular);
+  line-height: 18px;
+  color: var(--color-muted);
+}
+
+.resume__tech-list {
+  margin: 20px 0 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.resume__tech-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.resume__tech-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 16px;
+}
+
+.resume__ms {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #b2b2b2;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.resume__tech-name {
+  font-size: 10px;
+  font-weight: var(--fw-regular);
+  line-height: 14px;
+  color: var(--color-text);
+}
+
+.resume__skill-track {
+  position: relative;
+  height: 1px;
+  background: var(--color-track);
+  border-radius: 1px;
+}
+
+.resume__skill-fill {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 1px;
+}
+
+.resume__skill-knob {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-text);
+  box-shadow: 0 0 0 1px var(--color-page);
+}
+
+.resume__interest {
+  margin-top: 16px;
+  align-self: stretch;
+  display: flex;
+  gap: 27px;
+  flex-wrap: wrap;
+}
+
+.resume__interest-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.resume__interest .resume__ms {
+  align-self: flex-start;
+}
+
+.resume__interest-text {
+  margin: 0;
+  font-size: 10px;
+  font-weight: var(--fw-regular);
+  line-height: 14px;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.resume__main {
+  flex: 1 1 320px;
+  min-width: 0;
+  padding: var(--main-pad-top) var(--main-pad-x) 48px 30px;
+  box-sizing: border-box;
+}
+
+.resume__main-inner {
+  max-width: var(--content-max);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-section);
+}
+
+.resume__section-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--color-text);
+}
+
+.resume__section--education {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resume__edu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-edu);
+}
+
+.resume__edu-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-stack);
+}
+
+.resume__edu-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--color-text);
+}
+
+.resume__body {
+  margin: 0;
+  font-size: 12px;
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  color: var(--color-muted);
+}
+
+.resume__link {
+  font-size: 12px;
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.resume__link:hover {
+  color: var(--color-text);
+}
+
+.resume__rule {
+  border: 0;
+  height: 1px;
+  margin: 0;
+  background: var(--rule);
+}
+
+.resume__experience {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-section);
+}
+
+.resume__job {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-block);
+}
+
+.resume__job-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-stack);
+}
+
+.resume__job-role,
+.resume__job-duties {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.resume__job-period {
+  margin: 0;
+  font-size: 14px;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--color-text);
+}
+
+.resume__job-company {
+  margin: 0;
+  font-size: 12px;
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  color: var(--color-muted);
+}
+
+.resume__subhead {
+  margin: 0;
+  font-size: 14px;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--color-text);
+}
+
+.resume__job-text {
+  margin: 0;
+  font-size: 12px;
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  color: var(--color-muted);
+}
+
+.resume__job-text + .resume__job-text {
+  margin-top: 16px;
+}
+
+.resume__job-text--pre {
+  white-space: pre-wrap;
+}
+
+.resume__projects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-section);
+}
+
+.resume__project {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-stack);
+}
+
+.resume__project-name {
+  margin: 0;
+  font-size: 12px;
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  color: var(--color-muted);
+}
+
+.resume__project-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-stack);
+}
+
+.resume__project-links a {
+  font-size: 12px;
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  width: fit-content;
+}
+
+.resume__soft {
+  padding-top: var(--gap-block);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-block);
+}
+
+.resume__soft-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resume__soft-list li {
+  font-size: 14px;
+  font-weight: var(--fw-regular);
+  line-height: 18px;
+  color: var(--color-muted);
+}
+
+@media (max-width: 900px) {
+  .resume {
+    flex-direction: column;
+  }
+
+  .resume__sidebar {
+    max-width: none;
+    flex: none;
+    width: 100%;
+  }
+
+  .resume__main {
+    padding-inline: var(--sidebar-pad-x);
+  }
+}
