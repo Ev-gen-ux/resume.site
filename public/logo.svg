@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="28" viewBox="0 0 50 28" fill="none">
+  <rect width="50" height="28" fill="#0b0b0b" />
+  <text
+    x="25"
+    y="14"
+    fill="#fefefe"
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-size="14"
+    font-weight="600"
+    dominant-baseline="central"
+    text-anchor="middle"
+  >
+    E — Y
+  </text>
+</svg>

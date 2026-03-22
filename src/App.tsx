@@ -11,6 +11,7 @@ import type { ExperienceBlock } from './portfolioData'
 
 const ASSET = {
   avatar: '/portfolio/pic.png',
+  logo: '/logo.svg',
 } as const
 
 function MsIcon({ name }: { name: string }) {
@@ -63,7 +64,10 @@ function JobDuties({ duties }: { duties: ExperienceBlock['duties'] }) {
 
 export default function App() {
   return (
-    <div className="resume" data-node-id="539:3472">
+    <div className="resume" data-node-id="294:20111">
+      <div className="resume__logo">
+        <img src={ASSET.logo} width={50} height={28} alt="E — Y" />
+      </div>
       <aside className="resume__sidebar" aria-label="Профиль">
         <img
           className="resume__avatar"
