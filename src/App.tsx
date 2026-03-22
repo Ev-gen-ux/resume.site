@@ -134,6 +134,12 @@ export default function App() {
               Behance
             </a>
           </li>
+          <li className="resume__contact-row">
+            <MsIcon name="web" />
+            <a href="https://eyportfolio.tilda.ws/" target="_blank" rel="noreferrer">
+              Portfolio website
+            </a>
+          </li>
         </ul>
 
         <h2 className="resume__sidebar-title resume__sidebar-title--hard">Hard Skills</h2>
