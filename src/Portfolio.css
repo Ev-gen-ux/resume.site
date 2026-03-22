@@ -582,6 +582,14 @@ html[data-theme='light'] .resume__tech-list .resume__skill-knob {
   width: fit-content;
 }
 
+html[data-theme='dark'] .resume__project-links a:hover {
+  color: #efefef;
+}
+
+html[data-theme='light'] .resume__project-links a:hover {
+  color: #000000;
+}
+
 @media (max-width: 900px) {
   .resume {
     flex-direction: column;
