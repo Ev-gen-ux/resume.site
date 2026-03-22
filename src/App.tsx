@@ -13,12 +13,6 @@ const ASSET = {
   avatar: '/portfolio/pic.png',
 } as const
 
-const TECH_ICONS = {
-  figma: 'layers',
-  protopie: 'animation',
-  code: 'code',
-} as const
-
 function MsIcon({ name }: { name: string }) {
   return (
     <span className="material-symbols-outlined resume__ms" aria-hidden>
@@ -123,7 +117,7 @@ export default function App() {
           {technicalSkills.map((row) => (
             <div key={row.name} className="resume__tech-row">
               <div className="resume__tech-label">
-                <MsIcon name={TECH_ICONS[row.icon]} />
+                <MsIcon name={row.icon} />
                 <span className="resume__tech-name">{row.name}</span>
               </div>
               <SkillBar fill={row.fill} />
@@ -203,8 +197,8 @@ export default function App() {
             <h2 id="projects-heading" className="resume__section-title">
               Проекты:
             </h2>
-            {projects.map((proj, index) => (
-              <div key={proj.name}>
+            {projects.map((proj) => (
+              <div key={proj.name} className="resume__project-row">
                 <div className="resume__project">
                   <p className="resume__project-name">{proj.name}</p>
                   <div className="resume__project-links">
@@ -215,7 +209,6 @@ export default function App() {
                     ))}
                   </div>
                 </div>
-                {index < projects.length - 1 ? <hr className="resume__rule" /> : null}
               </div>
             ))}
           </section>

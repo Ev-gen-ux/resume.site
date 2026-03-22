@@ -217,10 +217,11 @@ export const hardSkills = [
   'High Fidelity Design',
 ]
 
-export const technicalSkills: { name: string; fill: number; icon: 'figma' | 'protopie' | 'code' }[] = [
-  { name: 'Figma', fill: 0.95, icon: 'figma' },
-  { name: 'ProtoPie', fill: 0.45, icon: 'protopie' },
-  { name: 'HTML/CSS', fill: 0.43, icon: 'code' },
+export const technicalSkills: { name: string; fill: number; icon: string }[] = [
+  { name: 'Figma', fill: 0.95, icon: 'layers' },
+  { name: 'Cursor AI', fill: 0.7, icon: 'smart_toy' },
+  { name: 'GitHub', fill: 0.5, icon: 'commit' },
+  { name: 'HTML/CSS', fill: 0.45, icon: 'code' },
 ]
 
 export const softSkills = [
