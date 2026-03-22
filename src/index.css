@@ -26,6 +26,10 @@ body {
   background: var(--canvas-bg);
 }
 
+a {
+  text-decoration: none;
+}
+
 #root {
   min-height: 100vh;
   display: flex;
