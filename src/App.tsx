@@ -112,6 +112,18 @@ export default function App() {
           ))}
         </ul>
 
+        <h2
+          id="soft-heading"
+          className="resume__sidebar-title resume__sidebar-title--soft"
+        >
+          Soft Skills
+        </h2>
+        <ul className="resume__hard-list" aria-labelledby="soft-heading">
+          {softSkills.map((s) => (
+            <li key={s}>{s}</li>
+          ))}
+        </ul>
+
         <h2 className="resume__sidebar-title resume__sidebar-title--tech">Technical Skills</h2>
         <div className="resume__tech-list">
           {technicalSkills.map((row) => (
@@ -211,17 +223,6 @@ export default function App() {
                 </div>
               </div>
             ))}
-          </section>
-
-          <section className="resume__soft" aria-labelledby="soft-heading">
-            <h2 id="soft-heading" className="resume__section-title">
-              Soft Skills
-            </h2>
-            <ul className="resume__soft-list">
-              {softSkills.map((s) => (
-                <li key={s}>{s}</li>
-              ))}
-            </ul>
           </section>
         </div>
       </main>

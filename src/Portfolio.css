@@ -97,6 +97,10 @@
   margin-top: 40px;
 }
 
+.resume__sidebar-title--soft {
+  margin-top: 40px;
+}
+
 .resume__sidebar-title--tech {
   margin-top: 40px;
 }
@@ -445,29 +449,6 @@
   text-decoration: underline;
   text-underline-offset: 2px;
   width: fit-content;
-}
-
-.resume__soft {
-  padding-top: var(--gap-block);
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-block);
-}
-
-.resume__soft-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.resume__soft-list li {
-  font-size: 14px;
-  font-weight: var(--fw-regular);
-  line-height: 18px;
-  color: var(--color-muted);
 }
 
 @media (max-width: 900px) {
