@@ -236,6 +236,10 @@ html[data-theme='light'] {
   flex-shrink: 0;
 }
 
+.resume__contact-list .resume__contact-row .resume__ms {
+  color: #b2b2b2;
+}
+
 .resume__contact-row a,
 .resume__contact-row span {
   font-size: 14px;
