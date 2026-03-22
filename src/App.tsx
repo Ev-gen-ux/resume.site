@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './Portfolio.css'
 import {
   education,
@@ -8,10 +9,12 @@ import {
   technicalSkills,
 } from './portfolioData'
 import type { ExperienceBlock } from './portfolioData'
+import type { Theme } from './theme'
+import { getStoredTheme } from './theme'
+import { ThemeToggle } from './ThemeToggle'
 
 const ASSET = {
   avatar: '/portfolio/pic.png',
-  logo: '/logo.svg',
 } as const
 
 function MsIcon({ name }: { name: string }) {
@@ -63,11 +66,35 @@ function JobDuties({ duties }: { duties: ExperienceBlock['duties'] }) {
 }
 
 export default function App() {
+  const [theme, setTheme] = useState<Theme>(getStoredTheme)
+
   return (
     <div className="resume" data-node-id="294:20111">
-      <div className="resume__logo">
-        <img src={ASSET.logo} width={50} height={28} alt="E — Y" />
+      <div className="resume__logo" role="img" aria-label="E — Y">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={50}
+          height={28}
+          viewBox="0 0 50 28"
+          fill="none"
+          aria-hidden
+        >
+          <rect width="50" height="28" fill="var(--logo-bg)" />
+          <text
+            x="25"
+            y="14"
+            fill="var(--logo-text)"
+            fontFamily="system-ui, -apple-system, 'Segoe UI', sans-serif"
+            fontSize="14"
+            fontWeight="600"
+            dominantBaseline="central"
+            textAnchor="middle"
+          >
+            E — Y
+          </text>
+        </svg>
       </div>
+      <ThemeToggle theme={theme} onThemeChange={setTheme} />
       <aside className="resume__sidebar" aria-label="Профиль">
         <img
           className="resume__avatar"

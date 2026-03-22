@@ -1,10 +1,46 @@
-/* Design tokens from Figma node 539:3472 */
+/* Colors: Figma DSA_Materials 136:24; dark — default layout tokens */
+html[data-theme='dark'] {
+  --resume-main-bg: #2e2e2e;
+  --resume-sidebar-bg: #1c1c1c;
+  --resume-text: #ffffff;
+  --resume-muted: #b2b2b2;
+  --resume-track: rgba(178, 178, 178, 0.5);
+  --resume-rule: rgba(255, 255, 255, 0.12);
+  --resume-icon: #b2b2b2;
+  --resume-project-border: #3d3d3d;
+  --resume-logo-bg: #0b0b0b;
+  --resume-logo-text: #fefefe;
+  --resume-toggle-surface: #1c1c1c;
+  --resume-toggle-muted: #b2b2b2;
+  --resume-toggle-on-accent: #fefefe;
+  --resume-toggle-active-bg: #0b0b0b;
+  --resume-toggle-inactive-bg: #2e2e2e;
+}
+
+html[data-theme='light'] {
+  --resume-main-bg: #ffffff;
+  --resume-sidebar-bg: #f2f2f2;
+  --resume-text: #000000;
+  --resume-muted: #656565;
+  --resume-track: rgba(101, 101, 101, 0.35);
+  --resume-rule: rgba(0, 0, 0, 0.12);
+  --resume-icon: #656565;
+  --resume-project-border: #e0e0e0;
+  --resume-logo-bg: #656565;
+  --resume-logo-text: #fefefe;
+  --resume-toggle-surface: #ffffff;
+  --resume-toggle-muted: #656565;
+  --resume-toggle-on-accent: #fefefe;
+  --resume-toggle-active-bg: #656565;
+  --resume-toggle-inactive-bg: transparent;
+}
+
 .resume {
   --page-width: 768px;
-  --color-page: #2e2e2e;
-  --color-text: #ffffff;
-  --color-muted: #b2b2b2;
-  --color-track: rgba(178, 178, 178, 0.5);
+  --color-page: var(--resume-main-bg);
+  --color-text: var(--resume-text);
+  --color-muted: var(--resume-muted);
+  --color-track: var(--resume-track);
   --sidebar-w: 300px;
   --sidebar-pad-x: 34px;
   --main-pad-top: 30px;
@@ -19,7 +55,9 @@
   --gap-edu: 40px;
   --gap-block: 20px;
   --gap-stack: 4px;
-  --rule: rgba(255, 255, 255, 0.12);
+  --rule: var(--resume-rule);
+  --logo-bg: var(--resume-logo-bg);
+  --logo-text: var(--resume-logo-text);
 
   width: var(--page-width);
   max-width: 100%;
@@ -43,7 +81,7 @@
   max-width: var(--sidebar-w);
   flex: 0 0 var(--sidebar-w);
   min-height: 100%;
-  background: #1c1c1c;
+  background: var(--resume-sidebar-bg);
   box-sizing: border-box;
   padding: 50px var(--sidebar-pad-x) 48px;
   display: flex;
@@ -61,10 +99,57 @@
   line-height: 0;
 }
 
-.resume__logo img {
+.resume__logo svg {
   display: block;
   width: 50px;
   height: 28px;
+}
+
+/* Figma 136:182 — theme toggle, top of sidebar */
+.resume__theme-toggle {
+  position: absolute;
+  left: 212px;
+  top: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: stretch;
+  background: var(--resume-toggle-surface);
+}
+
+.resume__theme-segment {
+  margin: 0;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  background: var(--resume-toggle-inactive-bg);
+  color: var(--resume-toggle-muted);
+  font: inherit;
+}
+
+.resume__theme-segment--active {
+  background: var(--resume-toggle-active-bg);
+  color: var(--resume-toggle-on-accent);
+}
+
+/* Material Symbols Outlined — 16px (Google Fonts, opsz 24) */
+.resume__theme-icon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 16px;
+  line-height: 16px;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  flex-shrink: 0;
 }
 
 .resume__avatar {
@@ -208,7 +293,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #b2b2b2;
+  color: var(--resume-icon);
   font-variation-settings:
     'FILL' 0,
     'wght' 400,
@@ -250,7 +335,7 @@
   height: 6px;
   border-radius: 50%;
   background: var(--color-text);
-  box-shadow: 0 0 0 1px var(--color-page);
+  box-shadow: 0 0 0 1px var(--resume-main-bg);
 }
 
 .resume__interest {
@@ -435,7 +520,7 @@
 .resume__project-row:not(:last-child) {
   padding-bottom: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #3d3d3d;
+  border-bottom: 1px solid var(--resume-project-border);
 }
 
 .resume__project {
