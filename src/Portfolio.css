@@ -240,6 +240,10 @@ html[data-theme='light'] {
   color: #b2b2b2;
 }
 
+html[data-theme='light'] .resume__contact-list .resume__contact-row .resume__ms {
+  color: #656565;
+}
+
 .resume__contact-row a,
 .resume__contact-row span {
   font-size: 14px;
@@ -249,7 +253,7 @@ html[data-theme='light'] {
 }
 
 .resume__contact-list .resume__contact-row a:hover {
-  color: #b2b2b2;
+  color: #656565;
 }
 
 .resume__hard-list {
