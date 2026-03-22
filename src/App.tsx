@@ -94,8 +94,8 @@ export default function App() {
           </text>
         </svg>
       </div>
-      <ThemeToggle theme={theme} onThemeChange={setTheme} />
       <aside className="resume__sidebar" aria-label="Профиль">
+        <ThemeToggle theme={theme} onThemeChange={setTheme} />
         <img
           className="resume__avatar"
           src={ASSET.avatar}

@@ -77,6 +77,7 @@ html[data-theme='light'] {
 }
 
 .resume__sidebar {
+  position: relative;
   width: 100%;
   max-width: var(--sidebar-w);
   flex: 0 0 var(--sidebar-w);
@@ -105,10 +106,10 @@ html[data-theme='light'] {
   height: 28px;
 }
 
-/* Figma 136:182 — theme toggle, top of sidebar */
+/* Переключатель тем — правый верх колонки resume__sidebar */
 .resume__theme-toggle {
   position: absolute;
-  left: 212px;
+  right: 16px;
   top: 16px;
   z-index: 2;
   display: flex;
@@ -336,6 +337,30 @@ html[data-theme='light'] {
   border-radius: 50%;
   background: var(--color-text);
   box-shadow: 0 0 0 1px var(--resume-main-bg);
+}
+
+/* Тёмная тема: заполнение и маркер #4E4A4A */
+html[data-theme='dark'] .resume__tech-list .resume__skill-fill,
+html[data-theme='dark'] .resume__tech-list .resume__skill-knob {
+  background: #4e4a4a;
+}
+
+html[data-theme='dark'] .resume__tech-list .resume__skill-knob {
+  box-shadow: 0 0 0 1px var(--resume-sidebar-bg);
+}
+
+/* Светлая тема: дорожка #DCDCDC, заполнение и маркер #AEAEAE */
+html[data-theme='light'] .resume__tech-list .resume__skill-track {
+  background: #dcdcdc;
+}
+
+html[data-theme='light'] .resume__tech-list .resume__skill-fill,
+html[data-theme='light'] .resume__tech-list .resume__skill-knob {
+  background: #aeaeae;
+}
+
+html[data-theme='light'] .resume__tech-list .resume__skill-knob {
+  box-shadow: 0 0 0 1px var(--resume-sidebar-bg);
 }
 
 .resume__interest {
