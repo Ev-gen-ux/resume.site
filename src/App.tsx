@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './Portfolio.css'
 import {
   education,
@@ -67,9 +67,45 @@ function JobDuties({ duties }: { duties: ExperienceBlock['duties'] }) {
 
 export default function App() {
   const [theme, setTheme] = useState<Theme>(getStoredTheme)
+  const [isDownloadingPdf, setIsDownloadingPdf] = useState(false)
+  const resumeRef = useRef<HTMLDivElement>(null)
+
+  const handleDownloadPdf = async () => {
+    if (!resumeRef.current || isDownloadingPdf) return
+    setIsDownloadingPdf(true)
+
+    try {
+      const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+        import('html2canvas'),
+        import('jspdf'),
+      ])
+
+      const canvas = await html2canvas(resumeRef.current, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: null,
+      })
+
+      const image = canvas.toDataURL('image/png')
+      const pdf = new jsPDF({ orientation: 'l', unit: 'mm', format: 'a4' })
+      const pageWidth = pdf.internal.pageSize.getWidth()
+      const pageHeight = pdf.internal.pageSize.getHeight()
+      const scale = Math.min(pageWidth / canvas.width, pageHeight / canvas.height)
+      const imageWidth = canvas.width * scale
+      const imageHeight = canvas.height * scale
+      const x = (pageWidth - imageWidth) / 2
+      const y = (pageHeight - imageHeight) / 2
+
+      pdf.addImage(image, 'PNG', x, y, imageWidth, imageHeight, undefined, 'FAST')
+
+      pdf.save('Evgeniy-Yakovenko-Resume.pdf')
+    } finally {
+      setIsDownloadingPdf(false)
+    }
+  }
 
   return (
-    <div className="resume" data-node-id="294:20111">
+    <div ref={resumeRef} className="resume" data-node-id="294:20111">
       <div className="resume__logo" role="img" aria-label="E — Y">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +131,22 @@ export default function App() {
         </svg>
       </div>
       <aside className="resume__sidebar" aria-label="Профиль">
-        <ThemeToggle theme={theme} onThemeChange={setTheme} />
+        <div className="resume__top-actions">
+          <button
+            type="button"
+            className="resume__download-button"
+            onClick={handleDownloadPdf}
+            disabled={isDownloadingPdf}
+            aria-label="Скачать резюме в PDF"
+            title="Скачать резюме в PDF"
+            data-node-id="140:291"
+          >
+            <span className="material-symbols-outlined resume__download-icon" aria-hidden>
+              download
+            </span>
+          </button>
+          <ThemeToggle theme={theme} onThemeChange={setTheme} />
+        </div>
         <img
           className="resume__avatar"
           src={ASSET.avatar}
